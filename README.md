@@ -8,7 +8,7 @@ In this project I have used the Java spring framework along with the Java JPA to
 
 ## Database Decisions
 
-![](RackMultipart20211007-4-1u79cb6_html_72a6638e8eaccaac.png)
+![atm_simulator_dbDesign](https://user-images.githubusercontent.com/33063532/136365240-2041d774-c64e-4973-9ecd-b3aeaf6dc5d6.png)
 
 ### One to One Relationships
 
