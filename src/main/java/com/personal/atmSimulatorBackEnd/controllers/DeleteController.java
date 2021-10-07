@@ -9,13 +9,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequestMapping("/home")
 public class DeleteController {
     private final Logger LOGGER = LoggerFactory.getLogger(DeleteController.class);
 
     @Autowired
     private DeleteAccountService deleteAccountService;
 
-    @DeleteMapping("/home/account/deleteAccount")
+    @DeleteMapping("/account/deleteAccount")
     public ResponseObjectGetDeleteAccount deleteAccount(
             @RequestBody RequestObjectWithAccountId requestDeleteAccount
     ) {

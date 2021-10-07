@@ -20,11 +20,13 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
 
 @RestController
+@RequestMapping("/home")
 public class PutController {
     private final Logger LOGGER = LoggerFactory.getLogger(PutController.class);
 
@@ -33,7 +35,7 @@ public class PutController {
     @Autowired
     private CreateAccountService createAccountService;
 
-    @PutMapping("/home/createAccount")
+    @PutMapping("/createAccount")
     public ResponseObjectCreateEntity createAccount(
             @Valid @RequestBody RequestObjectRegisterUser requestObjectRegisterUser) throws InvalidInputException {
         // Only the bank and user details will come in from the front end
@@ -54,7 +56,7 @@ public class PutController {
         return createAccountService.create(requestCreateAccount);
     }
 
-    @PutMapping("/home/registerBank")
+    @PutMapping("/registerBank")
     public ResponseObjectStatus selectBank(
             @Valid @RequestBody RequestObjectRegisterBank registerBank
     ) {

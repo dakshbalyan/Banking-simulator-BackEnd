@@ -21,9 +21,11 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequestMapping("/home")
 public class PostController {
     private final Logger LOGGER = LoggerFactory.getLogger(PostController.class);
     @Autowired
@@ -37,7 +39,7 @@ public class PostController {
     @Autowired
     private AuthenticateUserService authenticateUserService;
 
-    @PostMapping("/home/account/changePin")
+    @PostMapping("/account/changePin")
     public ResponseObjectStatus responseChangePin(
             @RequestBody RequestObjectPinChange requestPinChange
     ) {
@@ -46,7 +48,7 @@ public class PostController {
         return changePin.changeAccountPin(requestPinChange);
     }
 
-    @PostMapping("/home/account/deposit")
+    @PostMapping("/account/deposit")
     public ResponseObjectGetDepositAmountDetails depositAmount(
             @RequestBody RequestObjectTransactionAmount requestDepositAmount
     ) {
@@ -54,7 +56,7 @@ public class PostController {
         return depositAmount.depsoitAmount(requestDepositAmount);
     }
 
-    @PostMapping("/home/account/withdraw")
+    @PostMapping("/account/withdraw")
     public ResponseObjectGetWithdrawDetails withdrawAmount(
             @RequestBody RequestObjectTransactionAmount requestWithdrawAmount
     ) {
@@ -62,7 +64,7 @@ public class PostController {
         return withdrawAmount.getWithdrawAmountDetails(requestWithdrawAmount);
     }
 
-    @PostMapping("/home/account/fastCash")
+    @PostMapping("/account/fastCash")
     public ResponseObjectGetWithdrawDetails responseFastCash(
             @RequestBody RequestObjectTransactionAmount requestFastCash
     ) {
@@ -70,7 +72,7 @@ public class PostController {
         return getFastCash.withdrawFastCash(requestFastCash);
     }
 
-    @PostMapping("/home/login")
+    @PostMapping("/login")
     public ResponseObjectStatus authenticateUser(
             @RequestBody RequestObjectLoginCredentials requestAuthentication) {
         return authenticateUserService.getAuthentication(requestAuthentication);

@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HomePageController {
 
-    @GetMapping(value = "/")
+    @GetMapping("/home")
     public String welcomePage() {
         return "This is our atm simulator REST api !";
     }
