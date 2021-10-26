@@ -8,7 +8,7 @@ In this project I have used the Java spring framework along with the Java JPA to
 
 ## Database Design
 
-![atm_simulator_dbDesign](https://user-images.githubusercontent.com/33063532/136365240-2041d774-c64e-4973-9ecd-b3aeaf6dc5d6.png)
+![atm_simulator_dbDesign](https://user-images.githubusercontent.com/33063532/138825107-9cc51655-bac0-4826-92c3-d7bda002692f.png)
 
 ### One to One Relationships
 
